@@ -1,0 +1,15 @@
+<div class="card login">
+    <h1>Sign up for Messenger</h1>
+    <%= form_for @user_changeset, Routes.page_path(@conn, :create_user), fn f -> %>
+        <%= error_tag f, :email %>
+        <%= text_input f, :email, placeholder: "Email" %>
+
+        <%= error_tag f, :username %>
+        <%= text_input f, :username, placeholder: "Username" %>
+
+        <%= error_tag f, :password %>
+        <%= text_input f, :password, placeholder: "Password", type: "password" %>
+
+        <%= submit "Sign up", class: "signup" %>
+    <% end %>
+</div>
