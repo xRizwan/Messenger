@@ -54,6 +54,12 @@ config :dart_sass,
     cd: Path.expand("../assets", __DIR__)
   ]
 
+config :messengyr, Messengyr.Accounts.Guardian,
+  issuer: "Messengyr",
+  ttl: { 30, :days },
+  allowed_drift: 2000,
+  secret_key: "5ecret_k3y"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
